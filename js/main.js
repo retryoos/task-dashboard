@@ -10,6 +10,7 @@ $(function () {
   injectHeader();
   injectFooter();
   highlightActiveLink();
+  setUpDarkMode();
 });
 
 function injectHeader() {
@@ -35,6 +36,10 @@ function injectHeader() {
         "</button>" +
         '<div class="collapse navbar-collapse" id="mainNav">' +
           '<ul class="navbar-nav ms-auto align-items-lg-center">' + links + "</ul>" +
+          '<button class="theme-toggle ms-lg-3 mt-2 mt-lg-0" id="themeToggle" ' +
+            'type="button" aria-label="Switch colour theme">' +
+            '<i class="bi bi-moon-stars" aria-hidden="true"></i>' +
+          "</button>" +
         "</div>" +
       "</div>" +
     "</nav>";
@@ -95,4 +100,27 @@ function highlightActiveLink() {
       $(this).addClass("active");
     }
   });
+}
+
+function setUpDarkMode() {
+  if (localStorage.getItem("aegis-theme") === "dark") {
+    $("body").addClass("dark-mode");
+    swapThemeIcon(true);
+  }
+
+  $("#themeToggle").on("click", function () {
+    $("body").toggleClass("dark-mode");
+    var isDark = $("body").hasClass("dark-mode");
+    localStorage.setItem("aegis-theme", isDark ? "dark" : "light");
+    swapThemeIcon(isDark);
+  });
+}
+
+function swapThemeIcon(isDark) {
+  var icon = $("#themeToggle i");
+  if (isDark) {
+    icon.removeClass("bi-moon-stars").addClass("bi-sun");
+  } else {
+    icon.removeClass("bi-sun").addClass("bi-moon-stars");
+  }
 }
