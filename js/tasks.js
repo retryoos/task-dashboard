@@ -1,5 +1,6 @@
 $(function () {
-  var tasks = [];
+  var tasks = loadTasks();
+  renderTasks(tasks);
 
   $("#taskForm").on("submit", function (event) {
     event.preventDefault();
@@ -29,6 +30,7 @@ $(function () {
     };
 
     tasks.push(task);
+    saveTasks(tasks);
     renderTasks(tasks);
     this.reset();
   });
@@ -55,5 +57,14 @@ $(function () {
         "</tr>";
       body.append(row);
     });
+  }
+
+  function saveTasks(list) {
+    localStorage.setItem("aegis-tasks", JSON.stringify(list));
+  }
+
+  function loadTasks() {
+    var data = localStorage.getItem("aegis-tasks");
+    return data ? JSON.parse(data) : [];
   }
 });
