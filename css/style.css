@@ -253,6 +253,54 @@ a {
   margin: 0 0 0.8rem;
 }
 
+.form-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  box-shadow: var(--shadow);
+  height: 100%;
+}
+.form-card .form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.task-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.task-line:last-child {
+  border-bottom: 0;
+}
+.task-name {
+  font-weight: 600;
+  flex: 1;
+}
+
+.badge-priority {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  color: #fff;
+}
+.badge-high {
+  background: var(--danger);
+}
+.badge-medium {
+  background: var(--warn);
+  color: oklch(0.25 0.02 250);
+}
+.badge-low {
+  background: var(--ok);
+}
+
 .site-footer {
   background: var(--surface);
   border-top: 1px solid var(--border);
