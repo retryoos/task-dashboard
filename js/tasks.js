@@ -91,6 +91,7 @@ $(function () {
   function renderTasks(list) {
     var body = $("#taskTableBody");
     body.empty();
+    updateSummary(list);
 
     if (list.length === 0) {
       $("#emptyNote").show();
@@ -126,6 +127,15 @@ $(function () {
         "</tr>";
       body.append(row);
     });
+  }
+
+  function updateSummary(list) {
+    var completed = list.filter(function (t) {
+      return t.status === "Completed";
+    }).length;
+    $("#countTotal").text(list.length);
+    $("#countCompleted").text(completed);
+    $("#countPending").text(list.length - completed);
   }
 
   function saveTasks(list) {

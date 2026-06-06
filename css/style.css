@@ -176,6 +176,12 @@ a { color: var(--accent-dark); }
   color: var(--muted);
 }
 
+.summary-num {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
 .site-footer {
   background: var(--surface);
   border-top: 1px solid var(--border);
