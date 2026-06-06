@@ -34,8 +34,8 @@
         <p class="eyebrow">Task board</p>
         <h1>Manage program tasks</h1>
         <p class="muted">
-          Add a task with a due date and priority. Everything you add is saved
-          in your browser.
+          Add a task with a due date and priority and it appears in the table
+          below.
         </p>
       </header>
 
@@ -86,7 +86,20 @@
         <div class="col-lg-8">
           <div class="form-card">
             <h2 class="h5 mb-3">Tasks</h2>
-            <ul id="taskPreview" class="list-unstyled m-0"></ul>
+            <div class="table-responsive">
+              <table class="table align-middle">
+                <thead>
+                  <tr>
+                    <th>Task</th>
+                    <th>Description</th>
+                    <th>Due date</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="taskTableBody"></tbody>
+              </table>
+            </div>
             <p id="emptyNote" class="muted m-0">
               No tasks yet. Add your first one on the left.
             </p>

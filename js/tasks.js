@@ -29,13 +29,13 @@ $(function () {
     };
 
     tasks.push(task);
-    renderPreview(tasks);
+    renderTasks(tasks);
     this.reset();
   });
 
-  function renderPreview(list) {
-    var holder = $("#taskPreview");
-    holder.empty();
+  function renderTasks(list) {
+    var body = $("#taskTableBody");
+    body.empty();
 
     if (list.length === 0) {
       $("#emptyNote").show();
@@ -46,12 +46,14 @@ $(function () {
     list.forEach(function (t) {
       var priorityClass = "badge-" + t.priority.toLowerCase();
       var row =
-        '<li class="task-line">' +
-          '<span class="badge-priority ' + priorityClass + '">' + t.priority + "</span>" +
-          '<span class="task-name">' + t.name + "</span>" +
-          '<span class="muted mono">' + t.due + "</span>" +
-        "</li>";
-      holder.append(row);
+        "<tr>" +
+          "<td>" + t.name + "</td>" +
+          '<td class="muted">' + (t.desc || "-") + "</td>" +
+          '<td class="mono">' + t.due + "</td>" +
+          '<td><span class="badge-priority ' + priorityClass + '">' + t.priority + "</span></td>" +
+          "<td>" + t.status + "</td>" +
+        "</tr>";
+      body.append(row);
     });
   }
 });
