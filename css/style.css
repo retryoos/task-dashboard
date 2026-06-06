@@ -227,6 +227,32 @@ a {
   margin: 0.8rem 0 0;
 }
 
+.section {
+  padding: var(--space-section) 0;
+}
+.feature {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  height: 100%;
+}
+.feature-lead {
+  background: var(--accent-soft);
+  border-color: transparent;
+}
+.feature-index {
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+}
+.feature h2,
+.feature h3 {
+  margin: 0.4rem 0 0.6rem;
+}
+.feature p {
+  margin: 0 0 0.8rem;
+}
+
 .site-footer {
   background: var(--surface);
   border-top: 1px solid var(--border);
