@@ -252,6 +252,13 @@ a {
   margin: 0 auto 0.75rem;
 }
 
+.quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.45;
+}
+
 .site-footer {
   background: var(--bg);
   border-top: 1px solid var(--border);
