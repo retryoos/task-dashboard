@@ -93,6 +93,7 @@ $(function () {
   function refresh() {
     renderRows(getVisibleTasks());
     updateSummary(tasks);
+    updateChart(tasks);
   }
 
   function getVisibleTasks() {
@@ -168,6 +169,28 @@ $(function () {
     $("#countTotal").text(list.length);
     $("#countCompleted").text(completed);
     $("#countPending").text(list.length - completed);
+  }
+
+  function updateChart(list) {
+    var total = list.length;
+    var completed = countBy(list, "status", "Completed");
+    setBar("#barCompleted", "#barCompletedVal", completed, total);
+    setBar("#barPending", "#barPendingVal", total - completed, total);
+    setBar("#barHigh", "#barHighVal", countBy(list, "priority", "High"), total);
+    setBar("#barMedium", "#barMediumVal", countBy(list, "priority", "Medium"), total);
+    setBar("#barLow", "#barLowVal", countBy(list, "priority", "Low"), total);
+  }
+
+  function countBy(list, key, value) {
+    return list.filter(function (t) {
+      return t[key] === value;
+    }).length;
+  }
+
+  function setBar(barId, valueId, count, total) {
+    var pct = total === 0 ? 0 : Math.round((count / total) * 100);
+    $(barId).css("width", pct + "%");
+    $(valueId).text(count);
   }
 
   function saveTasks(list) {
