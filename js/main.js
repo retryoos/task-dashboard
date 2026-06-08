@@ -7,6 +7,7 @@ var NAV_LINKS = [
 ];
 
 $(function () {
+  seedData();
   injectHeader();
   injectFooter();
   highlightActiveLink();
@@ -108,4 +109,35 @@ function setUpDarkMode() {
       localStorage.setItem("argus-theme", "light");
     }
   });
+}
+
+function seedData() {
+  if (localStorage.getItem("argus-tasks") !== null) {
+    return;
+  }
+
+  var hour = 60 * 60 * 1000;
+  var day = 24 * hour;
+  var now = Date.now();
+
+  var tasks = [
+    { id: 1, name: "Frigate radar calibration", desc: "Recalibrate the AN/SPY array before sea trials.", due: "2026-06-12", priority: "High", status: "Pending" },
+    { id: 2, name: "Q2 compliance report", desc: "Submit the quarterly ITAR compliance report.", due: "2026-06-04", priority: "High", status: "Completed" },
+    { id: 3, name: "Spare turbine parts order", desc: "Raise the purchase order for replacement turbine blades.", due: "2026-06-20", priority: "Medium", status: "Pending" },
+    { id: 4, name: "Maintenance log cleanup", desc: "Tidy and archive the 2025 maintenance logs.", due: "2026-05-28", priority: "Low", status: "Completed" },
+    { id: 5, name: "Dry-dock inspection", desc: "Book the hull inspection slot for the patrol vessel.", due: "2026-07-02", priority: "Medium", status: "Pending" },
+    { id: 6, name: "Subcontractor clearance review", desc: "Verify security clearances for two new subcontractors.", due: "2026-06-18", priority: "High", status: "Pending" },
+    { id: 7, name: "Update SOP templates", desc: "Refresh the standard operating procedure templates.", due: "2026-06-25", priority: "Low", status: "Completed" }
+  ];
+
+  var activity = [
+    { text: 'Completed "Q2 compliance report"', time: now - 3 * hour },
+    { text: 'Added "Subcontractor clearance review"', time: now - 1 * day },
+    { text: 'Completed "Update SOP templates"', time: now - 2 * day },
+    { text: 'Added "Dry-dock inspection"', time: now - 3 * day },
+    { text: 'Added "Frigate radar calibration"', time: now - 4 * day }
+  ];
+
+  localStorage.setItem("argus-tasks", JSON.stringify(tasks));
+  localStorage.setItem("argus-activity", JSON.stringify(activity));
 }
