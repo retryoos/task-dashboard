@@ -204,18 +204,18 @@ $(function () {
   }
 
   function saveTasks(list) {
-    localStorage.setItem("aegis-tasks", JSON.stringify(list));
+    localStorage.setItem("argus-tasks", JSON.stringify(list));
   }
 
   function loadTasks() {
-    var data = localStorage.getItem("aegis-tasks");
+    var data = localStorage.getItem("argus-tasks");
     return data ? JSON.parse(data) : [];
   }
 
   function logActivity(text) {
-    var log = JSON.parse(localStorage.getItem("aegis-activity") || "[]");
+    var log = JSON.parse(localStorage.getItem("argus-activity") || "[]");
     log.unshift({ text: text, time: Date.now() });
     log = log.slice(0, 20);
-    localStorage.setItem("aegis-activity", JSON.stringify(log));
+    localStorage.setItem("argus-activity", JSON.stringify(log));
   }
 });

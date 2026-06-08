@@ -1,7 +1,7 @@
 # Task Dashboard
 
 My midterm project for ITC 4214. It is a small task manager for a made-up defense
-company, Aegis Defense Systems. You add a task, give it a due date and a priority,
+company, Argus Defense Systems. You add a task, give it a due date and a priority,
 and the page keeps track of what is done and what is still pending.
 
 Everything is plain HTML, CSS, JavaScript with jQuery, and Bootstrap 5. There is no

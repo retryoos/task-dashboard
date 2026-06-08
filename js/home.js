@@ -8,7 +8,7 @@ $(function () {
       return;
     }
 
-    var log = JSON.parse(localStorage.getItem("aegis-activity") || "[]");
+    var log = JSON.parse(localStorage.getItem("argus-activity") || "[]");
     if (log.length === 0) {
       $("#activityEmpty").show();
       return;
