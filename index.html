@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -35,38 +35,24 @@
     <main>
       <section class="hero">
         <div class="container">
-          <div class="row align-items-center g-5">
+          <div class="row g-5">
             <div class="col-lg-7">
               <p class="eyebrow">Defense program operations</p>
               <h1>Keep every program on schedule and on record.</h1>
+              <div class="hero-actions">
+                <a href="tasks.html" class="btn btn-accent btn-lg">Open the task board</a>
+                <a href="about.html" class="btn btn-link-quiet btn-lg">Learn about us</a>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
               <p class="hero-lead">
                 Aegis Defense Systems runs research, procurement and maintenance
                 work across several programs at once. This dashboard is where the
                 team adds, tracks and closes out the tasks that keep those
                 programs moving.
               </p>
-              <div class="hero-actions">
-                <a href="tasks.html" class="btn btn-accent btn-lg"
-                  >Open the task board</a
-                >
-                <a href="about.html" class="btn btn-link-quiet btn-lg"
-                  >Learn about us</a
-                >
-              </div>
-            </div>
-
-            <div class="col-lg-5">
-              <div class="panel">
-                <p class="panel-head">
-                  <span class="dot" aria-hidden="true"></span> Programs at a glance
-                </p>
-                <ul class="panel-list">
-                  <li><span>Active programs</span><b class="mono">7</b></li>
-                  <li><span>Tasks this week</span><b class="mono">23</b></li>
-                  <li><span>Awaiting sign-off</span><b class="mono">4</b></li>
-                </ul>
-                <p class="panel-note muted" id="weather">Loading HQ weather...</p>
-              </div>
+              <p class="muted mono" id="weather">Loading HQ weather...</p>
             </div>
           </div>
         </div>
@@ -74,41 +60,28 @@
 
       <section class="section">
         <div class="container">
-          <div class="row g-4">
-            <div class="col-lg-6">
-              <article class="feature feature-lead">
-                <h2>One board for the whole program lifecycle</h2>
-                <p>
-                  From the first requirement to final inspection, every task
-                  lives in one place with an owner, a due date and a status. No
-                  more chasing updates across email threads and spreadsheets.
-                </p>
-                <a href="tasks.html" class="link-accent"
-                  >Go to the task board <i class="bi bi-arrow-right" aria-hidden="true"></i></a
-                >
-              </article>
+          <h2 class="mb-5">Built for program teams</h2>
+          <div class="row g-5">
+            <div class="col-md-4">
+              <h3>One board for everything</h3>
+              <p class="muted">
+                From the first requirement to final inspection, every task lives
+                in one place with an owner, a due date and a status.
+              </p>
             </div>
-
-            <div class="col-md-6 col-lg-3">
-              <article class="feature">
-                <span class="feature-index mono">01</span>
-                <h3>Priorities that are obvious</h3>
-                <p class="muted">
-                  High, medium and low priorities are colour coded so the urgent
-                  work stands out at a glance.
-                </p>
-              </article>
+            <div class="col-md-4">
+              <h3>Clear priorities</h3>
+              <p class="muted">
+                High, medium and low priorities are colour coded so the urgent
+                work stands out at a glance.
+              </p>
             </div>
-
-            <div class="col-md-6 col-lg-3">
-              <article class="feature">
-                <span class="feature-index mono">02</span>
-                <h3>Filter and sort instantly</h3>
-                <p class="muted">
-                  Narrow the list by status or priority, and sort by name or due
-                  date without reloading the page.
-                </p>
-              </article>
+            <div class="col-md-4">
+              <h3>Filter and sort</h3>
+              <p class="muted">
+                Narrow the list by status or priority and sort by due date or
+                name, with no page reload.
+              </p>
             </div>
           </div>
         </div>

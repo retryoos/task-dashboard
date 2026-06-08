@@ -25,10 +25,7 @@ function injectHeader() {
   var navbar =
     '<nav class="navbar navbar-expand-lg site-nav sticky-top" aria-label="Main navigation">' +
       '<div class="container">' +
-        '<a class="brand" href="index.html">' +
-          '<i class="bi bi-shield-shaded mark" aria-hidden="true"></i>' +
-          "<span>Aegis Defense Systems<small>Program Operations</small></span>" +
-        "</a>" +
+        '<a class="brand" href="index.html">Aegis Defense Systems</a>' +
         '<button class="navbar-toggler" type="button" data-bs-toggle="collapse" ' +
           'data-bs-target="#mainNav" aria-controls="mainNav" ' +
           'aria-expanded="false" aria-label="Toggle navigation">' +
@@ -54,10 +51,7 @@ function injectFooter() {
       '<div class="container">' +
         '<div class="row g-4">' +
           '<div class="col-md-5">' +
-            '<a class="brand" href="index.html">' +
-              '<i class="bi bi-shield-shaded mark" aria-hidden="true"></i>' +
-              "<span>Aegis Defense Systems</span>" +
-            "</a>" +
+            '<a class="brand" href="index.html">Aegis Defense Systems</a>' +
             '<p class="mt-3 muted">Program operations dashboard for research, ' +
               "procurement and maintenance teams.</p>" +
           "</div>" +
