@@ -85,12 +85,12 @@ a {
   color: var(--text);
   text-decoration: none;
 }
-.nav-link {
+.site-nav .nav-link {
   color: var(--muted);
   font-weight: 500;
 }
-.nav-link:hover,
-.nav-link.active {
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active {
   color: var(--text);
 }
 .theme-toggle {
