@@ -298,3 +298,9 @@ a {
   padding-top: 1.2rem;
   font-size: 0.85rem;
 }
+
+@media (max-width: 575.98px) {
+  html {
+    font-size: 87.5%;
+  }
+}
