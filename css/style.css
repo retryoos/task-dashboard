@@ -10,6 +10,8 @@
   --high: #d64545;
   --med: #e0a52e;
   --low: #2f9e6a;
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
   --radius: 16px;
 }
 
@@ -30,7 +32,7 @@ body.dark-mode {
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: var(--font-sans);
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -50,6 +52,12 @@ h2 {
 h3 {
   font-size: 1.2rem;
   font-weight: 600;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
 }
 p {
   max-width: 65ch;
@@ -79,9 +87,10 @@ a {
   padding: 0.5rem 0;
 }
 .brand {
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--text);
   text-decoration: none;
 }
