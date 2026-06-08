@@ -92,7 +92,7 @@ function highlightActiveLink() {
 
   $("#site-header .nav-link").each(function () {
     if ($(this).attr("href") === page) {
-      $(this).addClass("active");
+      $(this).addClass("active").attr("aria-current", "page");
     }
   });
 }
