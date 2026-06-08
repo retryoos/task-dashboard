@@ -10,6 +10,7 @@ $(function () {
   injectHeader();
   injectFooter();
   highlightActiveLink();
+  setUpDarkMode();
 });
 
 function injectHeader() {
@@ -35,6 +36,9 @@ function injectHeader() {
         "</button>" +
         '<div class="collapse navbar-collapse" id="mainNav">' +
           '<ul class="navbar-nav ms-auto align-items-lg-center">' + links + "</ul>" +
+          '<button class="theme-toggle ms-lg-3 mt-2 mt-lg-0" id="themeToggle" type="button" aria-label="Toggle dark mode">' +
+            '<i class="bi bi-circle-half" aria-hidden="true"></i>' +
+          "</button>" +
         "</div>" +
       "</div>" +
     "</nav>";
@@ -93,6 +97,21 @@ function highlightActiveLink() {
   $("#site-header .nav-link").each(function () {
     if ($(this).attr("href") === page) {
       $(this).addClass("active").attr("aria-current", "page");
+    }
+  });
+}
+
+function setUpDarkMode() {
+  if (localStorage.getItem("aegis-theme") === "dark") {
+    $("body").addClass("dark-mode");
+  }
+
+  $("#themeToggle").on("click", function () {
+    $("body").toggleClass("dark-mode");
+    if ($("body").hasClass("dark-mode")) {
+      localStorage.setItem("aegis-theme", "dark");
+    } else {
+      localStorage.setItem("aegis-theme", "light");
     }
   });
 }

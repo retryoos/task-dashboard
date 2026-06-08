@@ -13,6 +13,16 @@
   --radius: 12px;
 }
 
+body.dark-mode {
+  --bg: #14181d;
+  --surface: #1e242c;
+  --border: #313a45;
+  --text: #e8eaed;
+  --muted: #98a2ad;
+  --accent-dark: #7db4e6;
+  --accent-soft: #25313d;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -84,6 +94,15 @@ a { color: var(--accent-dark); }
 }
 .nav-link:hover,
 .nav-link.active { color: var(--accent-dark); }
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 8px;
+  cursor: pointer;
+}
 
 .btn-accent {
   background: var(--accent);
