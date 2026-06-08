@@ -226,6 +226,19 @@ a { color: var(--accent-dark); }
   border-bottom: none;
 }
 
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin: 0 auto 0.75rem;
+}
+
 .site-footer {
   background: var(--surface);
   border-top: 1px solid var(--border);
