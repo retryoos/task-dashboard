@@ -215,6 +215,17 @@ a { color: var(--accent-dark); }
 .bar-medium { background: var(--med); }
 .bar-low { background: var(--low); }
 
+.activity-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.activity-item:last-child {
+  border-bottom: none;
+}
+
 .site-footer {
   background: var(--surface);
   border-top: 1px solid var(--border);

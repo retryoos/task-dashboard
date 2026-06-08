@@ -32,6 +32,7 @@ $(function () {
       });
       editingId = null;
       $("#submitBtn").text("Add task");
+      logActivity('Edited "' + name + '"');
     } else {
       tasks.push({
         id: Date.now(),
@@ -41,6 +42,7 @@ $(function () {
         priority: priority,
         status: "Pending",
       });
+      logActivity('Added "' + name + '"');
     }
 
     saveTasks(tasks);
@@ -50,6 +52,11 @@ $(function () {
 
   $("#taskTableBody").on("click", ".btn-delete", function () {
     var id = $(this).data("id");
+    tasks.forEach(function (t) {
+      if (t.id === id) {
+        logActivity('Deleted "' + t.name + '"');
+      }
+    });
     tasks = tasks.filter(function (t) {
       return t.id !== id;
     });
@@ -62,6 +69,9 @@ $(function () {
     tasks.forEach(function (t) {
       if (t.id === id) {
         t.status = t.status === "Completed" ? "Pending" : "Completed";
+        logActivity(
+          (t.status === "Completed" ? 'Completed "' : 'Reopened "') + t.name + '"'
+        );
       }
     });
     saveTasks(tasks);
@@ -200,5 +210,12 @@ $(function () {
   function loadTasks() {
     var data = localStorage.getItem("aegis-tasks");
     return data ? JSON.parse(data) : [];
+  }
+
+  function logActivity(text) {
+    var log = JSON.parse(localStorage.getItem("aegis-activity") || "[]");
+    log.unshift({ text: text, time: Date.now() });
+    log = log.slice(0, 20);
+    localStorage.setItem("aegis-activity", JSON.stringify(log));
   }
 });
