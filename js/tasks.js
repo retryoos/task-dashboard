@@ -1,7 +1,7 @@
 $(function () {
   var tasks = loadTasks();
   var editingId = null;
-  renderTasks(tasks);
+  refresh();
 
   $("#taskForm").on("submit", function (event) {
     event.preventDefault();
@@ -44,7 +44,7 @@ $(function () {
     }
 
     saveTasks(tasks);
-    renderTasks(tasks);
+    refresh();
     this.reset();
   });
 
@@ -54,7 +54,7 @@ $(function () {
       return t.id !== id;
     });
     saveTasks(tasks);
-    renderTasks(tasks);
+    refresh();
   });
 
   $("#taskTableBody").on("click", ".btn-complete", function () {
@@ -65,7 +65,7 @@ $(function () {
       }
     });
     saveTasks(tasks);
-    renderTasks(tasks);
+    refresh();
   });
 
   $("#taskTableBody").on("click", ".btn-edit", function () {
@@ -88,12 +88,44 @@ $(function () {
     $("#taskName").focus();
   });
 
-  function renderTasks(list) {
+  $("#filterStatus, #filterPriority, #sortBy").on("change", refresh);
+
+  function refresh() {
+    renderRows(getVisibleTasks());
+    updateSummary(tasks);
+  }
+
+  function getVisibleTasks() {
+    var status = $("#filterStatus").val();
+    var priority = $("#filterPriority").val();
+    var sortBy = $("#sortBy").val();
+
+    var result = tasks.filter(function (t) {
+      var statusOk = status === "all" || t.status === status;
+      var priorityOk = priority === "all" || t.priority === priority;
+      return statusOk && priorityOk;
+    });
+
+    result.sort(function (a, b) {
+      if (sortBy === "name") {
+        return a.name.localeCompare(b.name);
+      }
+      return a.due.localeCompare(b.due);
+    });
+
+    return result;
+  }
+
+  function renderRows(list) {
     var body = $("#taskTableBody");
     body.empty();
-    updateSummary(list);
 
     if (list.length === 0) {
+      if (tasks.length === 0) {
+        $("#emptyNote").text("No tasks yet. Add your first one on the left.");
+      } else {
+        $("#emptyNote").text("No tasks match the current filters.");
+      }
       $("#emptyNote").show();
       return;
     }

@@ -105,6 +105,23 @@
         <div class="col-lg-8">
           <div class="form-card">
             <h2 class="h5 mb-3">Tasks</h2>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <select class="form-select form-select-sm w-auto" id="filterStatus" aria-label="Filter by status">
+                <option value="all">All statuses</option>
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+              </select>
+              <select class="form-select form-select-sm w-auto" id="filterPriority" aria-label="Filter by priority">
+                <option value="all">All priorities</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+              <select class="form-select form-select-sm w-auto" id="sortBy" aria-label="Sort tasks">
+                <option value="due">Sort by due date</option>
+                <option value="name">Sort by name</option>
+              </select>
+            </div>
             <div class="table-responsive">
               <table class="table align-middle">
                 <thead>
