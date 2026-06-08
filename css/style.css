@@ -259,6 +259,14 @@ a {
   line-height: 1.45;
 }
 
+#testimonialCarousel {
+  padding: 0 3rem;
+}
+#testimonialCarousel .carousel-control-prev,
+#testimonialCarousel .carousel-control-next {
+  width: 3rem;
+}
+
 .site-footer {
   background: var(--bg);
   border-top: 1px solid var(--border);
