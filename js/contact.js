@@ -23,7 +23,7 @@ $(function () {
     $("#sumSubject").text(subject);
     $("#sumMessage").text(message);
 
-    var modal = new bootstrap.Modal(document.getElementById("confirmModal"));
+    var modal = new bootstrap.Modal(document.querySelector("#confirmModal"));
     modal.show();
 
     this.reset();
