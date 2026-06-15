@@ -22,8 +22,8 @@ a { color: inherit; }
 
 .btn-accent { background: var(--bs-emphasis-color); color: var(--bs-body-bg); border: none; border-radius: 999px; padding: 0.7rem 1.6rem; font-weight: 600; }
 .btn-accent:hover { color: var(--bs-body-bg); opacity: 0.9; }
-.btn-line { background: transparent; color: inherit; border: 1px solid var(--bs-border-color); border-radius: 999px; padding: 0.7rem 1.6rem; font-weight: 600; }
-.btn-line:hover { border-color: var(--bs-emphasis-color); }
+.btn-link-quiet { background: transparent; color: inherit; border: 1px solid var(--bs-border-color); border-radius: 999px; padding: 0.7rem 1.6rem; font-weight: 600; }
+.btn-link-quiet:hover { border-color: var(--bs-emphasis-color); }
 
 .form-card { background: var(--bs-body-bg); border: 1px solid var(--bs-border-color); border-radius: 1rem; padding: 1.75rem; }
 
