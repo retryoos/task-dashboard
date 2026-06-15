@@ -68,9 +68,9 @@ function injectFooter() {
             '<h2 class="footer-head">Contact</h2>' +
             '<p class="mb-2"><a href="mailto:ops@argusdefense.example">ops@argusdefense.example</a></p>' +
             '<div class="social-row">' +
-              '<a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>' +
-              '<a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>' +
-              '<a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>' +
+              '<a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>' +
+              '<a href="https://x.com" target="_blank" rel="noopener" aria-label="X"><i class="bi bi-twitter-x"></i></a>' +
+              '<a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>' +
             "</div>" +
           "</div>" +
         "</div>" +
