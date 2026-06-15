@@ -97,16 +97,18 @@ function highlightActiveLink() {
 }
 
 function setUpDarkMode() {
+  var root = document.documentElement;
   if (localStorage.getItem("argus-theme") === "dark") {
-    $("body").addClass("dark-mode");
+    root.setAttribute("data-bs-theme", "dark");
   }
 
   $("#themeToggle").on("click", function () {
-    $("body").toggleClass("dark-mode");
-    if ($("body").hasClass("dark-mode")) {
-      localStorage.setItem("argus-theme", "dark");
-    } else {
+    if (root.getAttribute("data-bs-theme") === "dark") {
+      root.removeAttribute("data-bs-theme");
       localStorage.setItem("argus-theme", "light");
+    } else {
+      root.setAttribute("data-bs-theme", "dark");
+      localStorage.setItem("argus-theme", "dark");
     }
   });
 }
