@@ -70,7 +70,9 @@ $(function () {
       if (t.id === id) {
         t.status = t.status === "Completed" ? "Pending" : "Completed";
         logActivity(
-          (t.status === "Completed" ? 'Completed "' : 'Reopened "') + t.name + '"'
+          (t.status === "Completed" ? 'Completed "' : 'Reopened "') +
+            t.name +
+            '"',
         );
       }
     });
@@ -161,17 +163,35 @@ $(function () {
             '" aria-label="Mark complete"><i class="bi bi-check2"></i></button>';
 
       var row =
-        "<tr" + rowClass + ">" +
-          "<td>" + escapeHtml(t.name) + "</td>" +
-          '<td class="muted">' + escapeHtml(t.desc || "-") + "</td>" +
-          '<td class="mono">' + escapeHtml(t.due) + "</td>" +
-          '<td><span class="badge-priority ' + priorityClass + '">' + priority + "</span></td>" +
-          "<td>" + escapeHtml(t.status) + "</td>" +
-          '<td class="text-nowrap">' +
-            completeBtn +
-            ' <button class="btn btn-sm btn-outline-secondary btn-edit" data-id="' + t.id + '" aria-label="Edit task"><i class="bi bi-pencil"></i></button>' +
-            ' <button class="btn btn-sm btn-outline-danger btn-delete" data-id="' + t.id + '" aria-label="Delete task"><i class="bi bi-trash"></i></button>' +
-          "</td>" +
+        "<tr" +
+        rowClass +
+        ">" +
+        "<td>" +
+        escapeHtml(t.name) +
+        "</td>" +
+        '<td class="muted">' +
+        escapeHtml(t.desc || "-") +
+        "</td>" +
+        '<td class="mono">' +
+        escapeHtml(t.due) +
+        "</td>" +
+        '<td><span class="badge-priority ' +
+        priorityClass +
+        '">' +
+        priority +
+        "</span></td>" +
+        "<td>" +
+        escapeHtml(t.status) +
+        "</td>" +
+        '<td class="text-nowrap">' +
+        completeBtn +
+        ' <button class="btn btn-sm btn-outline-secondary btn-edit" data-id="' +
+        t.id +
+        '" aria-label="Edit task"><i class="bi bi-pencil"></i></button>' +
+        ' <button class="btn btn-sm btn-outline-danger btn-delete" data-id="' +
+        t.id +
+        '" aria-label="Delete task"><i class="bi bi-trash"></i></button>' +
+        "</td>" +
         "</tr>";
       body.append(row);
     });
@@ -192,7 +212,12 @@ $(function () {
     setBar("#barCompleted", "#barCompletedVal", completed, total);
     setBar("#barPending", "#barPendingVal", total - completed, total);
     setBar("#barHigh", "#barHighVal", countBy(list, "priority", "High"), total);
-    setBar("#barMedium", "#barMediumVal", countBy(list, "priority", "Medium"), total);
+    setBar(
+      "#barMedium",
+      "#barMediumVal",
+      countBy(list, "priority", "Medium"),
+      total,
+    );
     setBar("#barLow", "#barLowVal", countBy(list, "priority", "Low"), total);
   }
 

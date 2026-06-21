@@ -24,8 +24,12 @@ $(function () {
     log.slice(0, 6).forEach(function (item) {
       var when = new Date(item.time).toLocaleString();
       holder.append(
-        '<li class="activity-item"><span>' + escapeHtml(item.text) + "</span>" +
-          '<span class="muted mono">' + when + "</span></li>"
+        '<li class="activity-item"><span>' +
+          escapeHtml(item.text) +
+          "</span>" +
+          '<span class="muted mono">' +
+          when +
+          "</span></li>",
       );
     });
   }
@@ -44,7 +48,9 @@ $(function () {
           box.text("Weather unavailable right now.");
           return;
         }
-        box.text("HQ Athens: " + w.temperature + "°C, wind " + w.windspeed + " km/h");
+        box.text(
+          "HQ Athens: " + w.temperature + "°C, wind " + w.windspeed + " km/h",
+        );
       },
       error: function () {
         box.text("Weather unavailable right now.");
