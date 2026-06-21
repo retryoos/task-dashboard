@@ -70,6 +70,7 @@
                   id="taskName"
                   required
                   minlength="3"
+                  maxlength="80"
                 />
                 <div class="invalid-feedback">
                   Please enter a name of at least 3 characters.
@@ -78,7 +79,7 @@
 
               <div class="mb-3">
                 <label class="form-label" for="taskDesc">Description</label>
-                <textarea class="form-control" id="taskDesc" rows="3"></textarea>
+                <textarea class="form-control" id="taskDesc" rows="3" maxlength="280"></textarea>
               </div>
 
               <div class="mb-3">

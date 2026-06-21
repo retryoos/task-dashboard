@@ -45,22 +45,22 @@
             <form id="contactForm" novalidate>
               <div class="mb-3">
                 <label class="form-label" for="cName">Name</label>
-                <input type="text" class="form-control" id="cName" required />
+                <input type="text" class="form-control" id="cName" required maxlength="80" />
                 <div class="invalid-feedback">Please enter your name.</div>
               </div>
               <div class="mb-3">
                 <label class="form-label" for="cEmail">Email</label>
-                <input type="email" class="form-control" id="cEmail" required />
+                <input type="email" class="form-control" id="cEmail" required maxlength="120" />
                 <div class="invalid-feedback">Please enter a valid email.</div>
               </div>
               <div class="mb-3">
                 <label class="form-label" for="cSubject">Subject</label>
-                <input type="text" class="form-control" id="cSubject" required />
+                <input type="text" class="form-control" id="cSubject" required maxlength="120" />
                 <div class="invalid-feedback">Please enter a subject.</div>
               </div>
               <div class="mb-3">
                 <label class="form-label" for="cMessage">Message</label>
-                <textarea class="form-control" id="cMessage" rows="4" required></textarea>
+                <textarea class="form-control" id="cMessage" rows="4" required maxlength="1000"></textarea>
                 <div class="invalid-feedback">Please enter a message.</div>
               </div>
               <button type="submit" class="btn btn-accent">Send message</button>
