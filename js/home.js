@@ -8,7 +8,12 @@ $(function () {
       return;
     }
 
-    var log = JSON.parse(localStorage.getItem("argus-activity") || "[]");
+    var log = [];
+    try {
+      log = JSON.parse(localStorage.getItem("argus-activity") || "[]");
+    } catch (e) {
+      log = [];
+    }
     if (log.length === 0) {
       $("#activityEmpty").show();
       return;
@@ -34,7 +39,11 @@ $(function () {
       url: "https://api.open-meteo.com/v1/forecast",
       data: { latitude: 37.98, longitude: 23.73, current_weather: true },
       success: function (res) {
-        var w = res.current_weather;
+        var w = res && res.current_weather;
+        if (!w) {
+          box.text("Weather unavailable right now.");
+          return;
+        }
         box.text("HQ Athens: " + w.temperature + "°C, wind " + w.windspeed + " km/h");
       },
       error: function () {

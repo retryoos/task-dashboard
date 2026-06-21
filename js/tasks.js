@@ -209,11 +209,24 @@ $(function () {
 
   function loadTasks() {
     var data = localStorage.getItem("argus-tasks");
-    return data ? JSON.parse(data) : [];
+    if (!data) {
+      return [];
+    }
+    // Fall back to an empty list if the stored data is ever corrupted.
+    try {
+      return JSON.parse(data);
+    } catch (e) {
+      return [];
+    }
   }
 
   function logActivity(text) {
-    var log = JSON.parse(localStorage.getItem("argus-activity") || "[]");
+    var log = [];
+    try {
+      log = JSON.parse(localStorage.getItem("argus-activity") || "[]");
+    } catch (e) {
+      log = [];
+    }
     log.unshift({ text: text, time: Date.now() });
     log = log.slice(0, 20);
     localStorage.setItem("argus-activity", JSON.stringify(log));
