@@ -51,7 +51,7 @@ function injectFooter() {
     '<div class="site-footer">' +
       '<div class="container">' +
         '<div class="row g-4">' +
-          '<div class="col-md-5">' +
+          '<div class="col-12 col-md-5">' +
             '<a class="brand" href="index.html">Argus Defense Systems</a>' +
             '<p class="mt-3 muted">Program operations dashboard for research, ' +
               "procurement and maintenance teams.</p>" +
@@ -64,7 +64,7 @@ function injectFooter() {
               '<li><a href="capabilities.html">Capabilities</a></li>' +
             "</ul>" +
           "</div>" +
-          '<div class="col-6 col-md-4">' +
+          '<div class="col-12 col-sm-6 col-md-4">' +
             '<h2 class="footer-head">Contact</h2>' +
             '<p class="mb-2"><a href="mailto:ops@argusdefense.example">ops@argusdefense.example</a></p>' +
             '<div class="social-row">' +
