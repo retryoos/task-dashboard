@@ -1,8 +1,12 @@
+/* argus defense systems - custom styles, loaded after bootstrap */
+
+/* fonts wired into the bootstrap variables so the whole site picks them up */
 :root {
   --bs-body-font-family: "Manrope", system-ui, sans-serif;
   --serif: "Fraunces", Georgia, serif;
 }
 
+/* headings use the serif, body text stays on the sans from the root variable */
 h1,
 h2,
 h3,
@@ -32,6 +36,7 @@ a {
   color: inherit;
 }
 
+/* small text helpers */
 .muted {
   color: var(--bs-secondary-color);
 }
@@ -47,6 +52,7 @@ a {
   margin-bottom: 0.75rem;
 }
 
+/* navbar (markup is built in main.js) */
 .site-nav {
   background: var(--bs-body-bg);
   padding: 0.5rem 0;
@@ -76,6 +82,7 @@ a {
   cursor: pointer;
 }
 
+/* buttons, accent is the solid one and quiet is the outlined one */
 .btn-accent {
   background: var(--bs-emphasis-color);
   color: var(--bs-body-bg);
@@ -100,6 +107,7 @@ a {
   border-color: var(--bs-emphasis-color);
 }
 
+/* card used for forms, panels and team members */
 .form-card {
   background: var(--bs-body-bg);
   border: 1px solid var(--bs-border-color);
@@ -107,6 +115,7 @@ a {
   padding: 1.75rem;
 }
 
+/* hero on the home page */
 .hero {
   padding: clamp(3rem, 2rem + 6vw, 7rem) 0;
 }
@@ -126,10 +135,13 @@ a {
   flex-wrap: wrap;
   margin-top: 1.5rem;
 }
+
+/* shared vertical spacing for a page section */
 .section {
   padding: clamp(3rem, 2rem + 5vw, 6rem) 0;
 }
 
+/* forms and the task table */
 .form-label {
   font-weight: 600;
   font-size: 0.9rem;
@@ -162,6 +174,7 @@ a {
   letter-spacing: -0.02em;
 }
 
+/* analytics bars, the fill widths are set from javascript as percentages */
 .bar-row {
   display: flex;
   align-items: center;
@@ -201,6 +214,7 @@ a {
   background: var(--bs-danger);
 }
 
+/* latest activity list and the testimonial quotes */
 .activity-item {
   display: flex;
   justify-content: space-between;
@@ -217,6 +231,7 @@ a {
   line-height: 1.45;
 }
 
+/* team member initials circle */
 .avatar {
   width: 56px;
   height: 56px;
@@ -229,6 +244,7 @@ a {
   margin: 0 auto 0.75rem;
 }
 
+/* carousel padding so the arrows sit outside the card */
 #testimonialCarousel {
   padding: 0 3rem;
 }
@@ -237,6 +253,7 @@ a {
   width: 3rem;
 }
 
+/* footer (markup is built in main.js) */
 .site-footer {
   background: var(--bs-body-bg);
   border-top: 1px solid var(--bs-border-color);
@@ -269,12 +286,12 @@ a {
   font-size: 0.85rem;
 }
 
+/* phones, shrink the base text a little and widen the side gutters so content
+   sits away from the screen edges, the text inside stays left aligned */
 @media (max-width: 575.98px) {
   html {
     font-size: 87.5%;
   }
-  /* Phones: widen the side gutters so content sits away from the screen edges
-     and reads as centred. The text inside stays left aligned for readability. */
   .container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
