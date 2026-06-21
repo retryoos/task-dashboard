@@ -74,8 +74,8 @@ function injectFooter() {
             "</div>" +
           "</div>" +
         "</div>" +
-        '<div class="footer-bottom">&copy; ' + year +
-          " Argus Defense Systems. Built for ITC 4214.</div>" +
+        '<div class="footer-bottom">' + year +
+          " Argus Defense Systems, designed for ITC 4214</div>" +
       "</div>" +
     "</div>";
 
