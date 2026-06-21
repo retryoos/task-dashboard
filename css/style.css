@@ -231,7 +231,7 @@ a {
   line-height: 1.45;
 }
 
-/* team member initials circle */
+/* team member avatar, holds a headshot photo cropped to a circle */
 .avatar {
   width: 56px;
   height: 56px;
@@ -242,6 +242,12 @@ a {
   justify-content: center;
   font-weight: 700;
   margin: 0 auto 0.75rem;
+  overflow: hidden;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* carousel padding so the arrows sit outside the card */
