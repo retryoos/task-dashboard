@@ -143,7 +143,12 @@ $(function () {
     $("#emptyNote").hide();
 
     list.forEach(function (t) {
-      var priorityClass = "badge-" + t.priority.toLowerCase();
+      // Only trust the three known priorities so a tampered value cannot reach the markup.
+      var priority =
+        t.priority === "High" || t.priority === "Medium" || t.priority === "Low"
+          ? t.priority
+          : "Medium";
+      var priorityClass = "badge-" + priority.toLowerCase();
       var rowClass = t.status === "Completed" ? ' class="task-done"' : "";
 
       var completeBtn =
@@ -159,9 +164,9 @@ $(function () {
         "<tr" + rowClass + ">" +
           "<td>" + escapeHtml(t.name) + "</td>" +
           '<td class="muted">' + escapeHtml(t.desc || "-") + "</td>" +
-          '<td class="mono">' + t.due + "</td>" +
-          '<td><span class="badge-priority ' + priorityClass + '">' + t.priority + "</span></td>" +
-          "<td>" + t.status + "</td>" +
+          '<td class="mono">' + escapeHtml(t.due) + "</td>" +
+          '<td><span class="badge-priority ' + priorityClass + '">' + priority + "</span></td>" +
+          "<td>" + escapeHtml(t.status) + "</td>" +
           '<td class="text-nowrap">' +
             completeBtn +
             ' <button class="btn btn-sm btn-outline-secondary btn-edit" data-id="' + t.id + '" aria-label="Edit task"><i class="bi bi-pencil"></i></button>' +
