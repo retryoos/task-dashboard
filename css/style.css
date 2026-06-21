@@ -71,11 +71,14 @@ a { color: inherit; }
 
 .site-footer { background: var(--bs-body-bg); border-top: 1px solid var(--bs-border-color); color: var(--bs-secondary-color); padding: 3rem 0 1.5rem; margin-top: 4rem; }
 .footer-head { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; }
-.site-footer a { color: var(--bs-secondary-color); text-decoration: none; }
+.site-footer a { color: var(--bs-secondary-color); text-decoration: none; overflow-wrap: anywhere; }
 .site-footer a:hover { color: var(--bs-emphasis-color); }
 .social-row { display: flex; gap: 0.7rem; font-size: 1.25rem; }
 .footer-bottom { border-top: 1px solid var(--bs-border-color); margin-top: 1.5rem; padding-top: 1.2rem; font-size: 0.85rem; }
 
 @media (max-width: 575.98px) {
   html { font-size: 87.5%; }
+  /* Phones: widen the side gutters so content sits away from the screen edges
+     and reads as centred. The text inside stays left aligned for readability. */
+  .container { padding-left: 1.5rem; padding-right: 1.5rem; }
 }
