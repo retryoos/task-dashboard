@@ -109,17 +109,17 @@ function highlightActiveLink() {
 }
 
 function setUpDarkMode() {
-  var root = document.documentElement;
+  var root = $("html");
   if (localStorage.getItem("argus-theme") === "dark") {
-    root.setAttribute("data-bs-theme", "dark");
+    root.attr("data-bs-theme", "dark");
   }
 
   $("#themeToggle").on("click", function () {
-    if (root.getAttribute("data-bs-theme") === "dark") {
-      root.removeAttribute("data-bs-theme");
+    if (root.attr("data-bs-theme") === "dark") {
+      root.removeAttr("data-bs-theme");
       localStorage.setItem("argus-theme", "light");
     } else {
-      root.setAttribute("data-bs-theme", "dark");
+      root.attr("data-bs-theme", "dark");
       localStorage.setItem("argus-theme", "dark");
     }
   });
