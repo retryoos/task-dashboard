@@ -157,8 +157,8 @@ $(function () {
 
       var row =
         "<tr" + rowClass + ">" +
-          "<td>" + t.name + "</td>" +
-          '<td class="muted">' + (t.desc || "-") + "</td>" +
+          "<td>" + escapeHtml(t.name) + "</td>" +
+          '<td class="muted">' + escapeHtml(t.desc || "-") + "</td>" +
           '<td class="mono">' + t.due + "</td>" +
           '<td><span class="badge-priority ' + priorityClass + '">' + t.priority + "</span></td>" +
           "<td>" + t.status + "</td>" +

@@ -6,6 +6,18 @@ var NAV_LINKS = [
   { href: "capabilities.html", text: "Capabilities" },
 ];
 
+// Turn user typed text into safe markup before it is dropped into innerHTML.
+// Without this a task named like <img src=x onerror=...> would run as real
+// HTML when we build table rows or the activity feed by string concatenation.
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 $(function () {
   seedData();
   injectHeader();

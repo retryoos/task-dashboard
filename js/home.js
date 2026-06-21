@@ -19,7 +19,7 @@ $(function () {
     log.slice(0, 6).forEach(function (item) {
       var when = new Date(item.time).toLocaleString();
       holder.append(
-        '<li class="activity-item"><span>' + item.text + "</span>" +
+        '<li class="activity-item"><span>' + escapeHtml(item.text) + "</span>" +
           '<span class="muted mono">' + when + "</span></li>"
       );
     });
