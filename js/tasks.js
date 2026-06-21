@@ -47,7 +47,7 @@ $(function () {
 
     saveTasks(tasks);
     refresh();
-    this.reset();
+    $(this).trigger("reset");
   });
 
   $("#taskTableBody").on("click", ".btn-delete", function () {

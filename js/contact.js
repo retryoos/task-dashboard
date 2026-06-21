@@ -23,9 +23,9 @@ $(function () {
     $("#sumSubject").text(subject);
     $("#sumMessage").text(message);
 
-    var modal = new bootstrap.Modal(document.querySelector("#confirmModal"));
+    var modal = new bootstrap.Modal($("#confirmModal")[0]);
     modal.show();
 
-    this.reset();
+    $(this).trigger("reset");
   });
 });
