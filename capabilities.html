@@ -1,240 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Argus Defense Systems capabilities by division, frequently asked questions, and resources."
-    />
-    <title>Argus Defense Systems | Capabilities</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500;1,600;1,700&family=Manrope:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" href="img/logo.svg" type="image/svg+xml" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Argus Defense Systems capabilities by division, frequently asked questions, and resources.">
+  <title>Argus Defense Systems | Capabilities</title>
 
-  <body>
-    <header id="site-header"></header>
+  <!-- bootstrap css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- bootstrap icons, used in the task buttons and footer social links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
-    <main class="container section">
-      <header class="mb-4">
-        <p class="eyebrow">Capabilities</p>
-        <h1>Capabilities and resources</h1>
-        <p class="muted">
-          A quick look at where Argus works, answers to common questions, and a
-          few useful links.
-        </p>
-      </header>
+  <!-- google fonts, Fraunces for headings and Manrope for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500;1,600;1,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-      <h2 class="h4 mb-3">Divisions</h2>
-      <ul class="nav nav-pills mb-3" id="divTabs" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button
-            class="nav-link active"
-            id="land-tab"
-            data-bs-toggle="pill"
-            data-bs-target="#land"
-            type="button"
-            role="tab"
-            aria-controls="land"
-            aria-selected="true"
-          >
-            Land
-          </button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button
-            class="nav-link"
-            id="sea-tab"
-            data-bs-toggle="pill"
-            data-bs-target="#sea"
-            type="button"
-            role="tab"
-            aria-controls="sea"
-            aria-selected="false"
-          >
-            Sea
-          </button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button
-            class="nav-link"
-            id="air-tab"
-            data-bs-toggle="pill"
-            data-bs-target="#air"
-            type="button"
-            role="tab"
-            aria-controls="air"
-            aria-selected="false"
-          >
-            Air
-          </button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button
-            class="nav-link"
-            id="cyber-tab"
-            data-bs-toggle="pill"
-            data-bs-target="#cyber"
-            type="button"
-            role="tab"
-            aria-controls="cyber"
-            aria-selected="false"
-          >
-            Cyber
-          </button>
-        </li>
-      </ul>
-      <div class="tab-content mb-5" id="divTabsContent">
-        <div class="tab-pane fade show active" id="land" role="tabpanel" aria-labelledby="land-tab">
-          <div class="form-card">
-            <h3 class="h5">Land systems</h3>
-            <p class="muted mb-0">
-              Vehicle maintenance programs, spare-part procurement and field
-              support scheduling.
-            </p>
-          </div>
+  <!-- our own styles, loaded last so they can override bootstrap -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+</head>
+
+<body>
+  <!-- main.js fills the header and footer (shared on every page) -->
+  <header id="site-header"></header>
+
+  <main class="container section">
+    <!-- page intro -->
+    <header class="mb-4">
+      <p class="eyebrow">Capabilities</p>
+      <h1>Capabilities and resources</h1>
+      <p class="muted">
+        A quick look at where Argus works, answers to common questions, and a
+        few useful links.
+      </p>
+    </header>
+
+    <!-- division tabs (bootstrap pills) -->
+    <h2 class="h4 mb-3">Divisions</h2>
+    <ul class="nav nav-pills mb-3" id="divTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="land-tab" data-bs-toggle="pill" data-bs-target="#land" type="button" role="tab" aria-controls="land" aria-selected="true">
+          Land
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="sea-tab" data-bs-toggle="pill" data-bs-target="#sea" type="button" role="tab" aria-controls="sea" aria-selected="false">
+          Sea
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="air-tab" data-bs-toggle="pill" data-bs-target="#air" type="button" role="tab" aria-controls="air" aria-selected="false">
+          Air
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="cyber-tab" data-bs-toggle="pill" data-bs-target="#cyber" type="button" role="tab" aria-controls="cyber" aria-selected="false">
+          Cyber
+        </button>
+      </li>
+    </ul>
+
+    <!-- one panel per division, the tabs above switch between them -->
+    <div class="tab-content mb-5" id="divTabsContent">
+      <div class="tab-pane fade show active" id="land" role="tabpanel" aria-labelledby="land-tab">
+        <div class="form-card">
+          <h3 class="h5">Land systems</h3>
+          <p class="muted mb-0">
+            Vehicle maintenance programs, spare-part procurement and field
+            support scheduling.
+          </p>
         </div>
-        <div class="tab-pane fade" id="sea" role="tabpanel" aria-labelledby="sea-tab">
-          <div class="form-card">
-            <h3 class="h5">Sea systems</h3>
-            <p class="muted mb-0">
-              Vessel readiness tracking, dry-dock planning and onboard equipment
-              upgrades.
-            </p>
-          </div>
+      </div>
+      <div class="tab-pane fade" id="sea" role="tabpanel" aria-labelledby="sea-tab">
+        <div class="form-card">
+          <h3 class="h5">Sea systems</h3>
+          <p class="muted mb-0">
+            Vessel readiness tracking, dry-dock planning and onboard equipment
+            upgrades.
+          </p>
         </div>
-        <div class="tab-pane fade" id="air" role="tabpanel" aria-labelledby="air-tab">
-          <div class="form-card">
-            <h3 class="h5">Air systems</h3>
-            <p class="muted mb-0">
-              Inspection cycles, parts logistics and certification paperwork for
-              airframes.
-            </p>
-          </div>
+      </div>
+      <div class="tab-pane fade" id="air" role="tabpanel" aria-labelledby="air-tab">
+        <div class="form-card">
+          <h3 class="h5">Air systems</h3>
+          <p class="muted mb-0">
+            Inspection cycles, parts logistics and certification paperwork for
+            airframes.
+          </p>
         </div>
-        <div class="tab-pane fade" id="cyber" role="tabpanel" aria-labelledby="cyber-tab">
-          <div class="form-card">
-            <h3 class="h5">Cyber systems</h3>
-            <p class="muted mb-0">
-              Security reviews, patch tracking and compliance audits across
-              connected systems.
-            </p>
+      </div>
+      <div class="tab-pane fade" id="cyber" role="tabpanel" aria-labelledby="cyber-tab">
+        <div class="form-card">
+          <h3 class="h5">Cyber systems</h3>
+          <p class="muted mb-0">
+            Security reviews, patch tracking and compliance audits across
+            connected systems.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- faq accordion, first item open by default -->
+    <h2 class="h4 mb-3">Frequently asked questions</h2>
+    <div class="accordion mb-5" id="faq">
+      <div class="accordion-item">
+        <h3 class="accordion-header" id="faq1h">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+            Where is my task data stored?
+          </button>
+        </h3>
+        <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faq1h" data-bs-parent="#faq">
+          <div class="accordion-body">
+            Tasks are saved in your own browser using localStorage. Nothing is
+            sent to a server.
           </div>
         </div>
       </div>
-
-      <h2 class="h4 mb-3">Frequently asked questions</h2>
-      <div class="accordion mb-5" id="faq">
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="faq1h">
-            <button
-              class="accordion-button"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#faq1"
-              aria-expanded="true"
-              aria-controls="faq1"
-            >
-              Where is my task data stored?
-            </button>
-          </h3>
-          <div
-            id="faq1"
-            class="accordion-collapse collapse show"
-            aria-labelledby="faq1h"
-            data-bs-parent="#faq"
-          >
-            <div class="accordion-body">
-              Tasks are saved in your own browser using localStorage. Nothing is
-              sent to a server.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="faq2h">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#faq2"
-              aria-expanded="false"
-              aria-controls="faq2"
-            >
-              Can I sort and filter tasks?
-            </button>
-          </h3>
-          <div
-            id="faq2"
-            class="accordion-collapse collapse"
-            aria-labelledby="faq2h"
-            data-bs-parent="#faq"
-          >
-            <div class="accordion-body">
-              Yes. On the task board you can filter by status or priority and sort
-              by due date or name.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h3 class="accordion-header" id="faq3h">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#faq3"
-              aria-expanded="false"
-              aria-controls="faq3"
-            >
-              Does it work on a phone?
-            </button>
-          </h3>
-          <div
-            id="faq3"
-            class="accordion-collapse collapse"
-            aria-labelledby="faq3h"
-            data-bs-parent="#faq"
-          >
-            <div class="accordion-body">
-              Yes. The layout is responsive, the menu collapses into a hamburger,
-              and the table scrolls on small screens.
-            </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header" id="faq2h">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+            Can I sort and filter tasks?
+          </button>
+        </h3>
+        <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faq2h" data-bs-parent="#faq">
+          <div class="accordion-body">
+            Yes. On the task board you can filter by status or priority and sort
+            by due date or name.
           </div>
         </div>
       </div>
-
-      <h2 class="h4 mb-3">Resources</h2>
-      <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action">
-          Program task quick-start guide
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
-          Priority and status definitions
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
-          Data and privacy notes
-        </a>
+      <div class="accordion-item">
+        <h3 class="accordion-header" id="faq3h">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+            Does it work on a phone?
+          </button>
+        </h3>
+        <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faq3h" data-bs-parent="#faq">
+          <div class="accordion-body">
+            Yes. The layout is responsive, the menu collapses into a hamburger,
+            and the table scrolls on small screens.
+          </div>
+        </div>
       </div>
-    </main>
+    </div>
 
-    <footer id="site-footer"></footer>
+    <!-- resources, placeholder links for now -->
+    <h2 class="h4 mb-3">Resources</h2>
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action">
+        Program task quick-start guide
+      </a>
+      <a href="#" class="list-group-item list-group-item-action">
+        Priority and status definitions
+      </a>
+      <a href="#" class="list-group-item list-group-item-action">
+        Data and privacy notes
+      </a>
+    </div>
+  </main>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <!-- main.js fills the footer -->
+  <footer id="site-footer"></footer>
+
+  <!-- jquery first, then bootstrap, then our own scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>
